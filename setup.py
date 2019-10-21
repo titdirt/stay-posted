@@ -22,9 +22,16 @@ def get_setup():
 
 
 def setup():
-    os.system('mkdir config/ images/ logs/')
-    os.mkdir('./images/new')
-    os.mkdir('./images/sent')
+    if os.path.isfile('config'):
+        os.mkdir('./config')
+    if os.path.isfile('images'):
+        os.mkdir('./images')
+    if os.path.isfile('logs'):
+        os.mkdir('./logs')
+    if os.path.isfile('./images/new'):
+        os.mkdir('./images/new')
+    if os.path.isfile('./images/sent'):
+        os.mkdir('./images/sent')
     errorlog = open('./logs/error.log', 'w+')
     stayposted = open('./logs/stay-posted.log', 'w+')
     with open('./config/accounts.json', 'w+') as outfile:
