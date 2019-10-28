@@ -22,15 +22,15 @@ def get_setup():
 
 
 def setup():
-    if os.path.isfile('config'):
+    if os.path.exists('config'):
         os.mkdir('./config')
-    if os.path.isfile('images'):
+    if os.path.exists('images'):
         os.mkdir('./images')
-    if os.path.isfile('logs'):
+    if os.path.exists('logs'):
         os.mkdir('./logs')
-    if os.path.isfile('./images/new'):
+    if os.path.exists('images/new'):
         os.mkdir('./images/new')
-    if os.path.isfile('./images/sent'):
+    if os.path.exists('images/sent'):
         os.mkdir('./images/sent')
     errorlog = open('./logs/error.log', 'w+')
     stayposted = open('./logs/stay-posted.log', 'w+')
